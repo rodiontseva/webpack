@@ -1,0 +1,185 @@
+.subscribe-telegram {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 21px;
+
+  margin-top: 54px;
+  padding: 20px 16px;
+
+  background: linear-gradient(90deg, #7690BE 0%, #4F68A3 100%);
+  border-radius: 8px;
+
+  @include onTablet {
+    flex-direction: row;
+    align-items: center;
+
+    padding: 24px 28px;
+  }
+
+  @include onLaptop {
+    padding: 24px 80px;
+  }
+
+  @include onDesktop {
+    padding: 28px 80px;
+  }
+
+  &__icon-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    max-width: 210px;
+
+    @include onTablet {
+      gap: 48px;
+      max-width: 100%;
+    }
+
+    @include onLaptop {
+      gap: 200px;
+    }
+
+    @include onDesktop {
+      gap: 280px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #fff;
+
+    @include onTablet {
+      font-size: 18px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+
+    color: #fff;
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+  }
+
+  &__button-open {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+
+    width: 250px;
+    height: 40px;
+
+    background-color: #fff;
+
+    cursor: pointer;
+
+    @include onTablet {
+      gap: 79px;
+      width: 210px;
+    }
+
+    @include onDesktop {
+      gap: 123px;
+
+      width: 265px;
+      height: 48px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 3px;
+      width: 245px;
+      height: 1px;
+      background-color: #c5C8cc;
+
+      @include onTablet {
+        width: 205px;
+      }
+
+      @include onDesktop {
+        width: 260px;
+      }
+    }
+
+    & div::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 40px;
+      background-color: #4a67a8;
+
+      @include onDesktop {
+        height: 48px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 100%;
+      left: 3px;
+      width: 245px;
+      height: 1px;
+      background-color: #c5C8cc;
+
+      @include onTablet {
+        width: 205px;
+      }
+
+      @include onDesktop {
+        width: 265px;
+      }
+    }
+
+    & div::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 100%;
+      width: 1px;
+      height: 40px;
+      background-color: #c5C8cc;
+
+      @include onDesktop {
+        height: 48px;
+      }
+    }
+  }
+
+  &__button-open-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+
+    color: black;
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+  }
+}

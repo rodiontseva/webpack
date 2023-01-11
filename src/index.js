@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Subscribe } from "./components/Subscribe";
 import "./style/main.scss";
 
 
 ReactDOM.render(
-    <div className='main'>Wabpack is working!</div>,
+  <Subscribe />,
   document.getElementById('root')
 );
