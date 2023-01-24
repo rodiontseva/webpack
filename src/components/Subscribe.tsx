@@ -27,6 +27,7 @@ export const Subscribe: FC = () => {
           Subscribe
         </div>
       </a>
+      <img src={`${window.location.origin}/images/connect-banner.png`} alt="" />
     </section>
   );
 };

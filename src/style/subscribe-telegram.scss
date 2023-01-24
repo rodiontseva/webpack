@@ -11,6 +11,8 @@
   background: linear-gradient(90deg, #7690BE 0%, #4F68A3 100%);
   border-radius: 8px;
 
+  background-image: url(../images/connect-banner.png);
+
   @include onTablet {
     flex-direction: row;
     align-items: center;

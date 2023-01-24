@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = {
@@ -22,8 +24,9 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
+          MiniCssExtractPlugin.loader,
           // Creates `style` nodes from JS strings
-          "style-loader",
+          // "style-loader",
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
@@ -36,7 +39,11 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: ['file-loader'],
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          outputPath: 'images',
+        },
       },
       {
         test: /\.svg$/,
@@ -53,9 +60,26 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
+    new MiniCssExtractPlugin(
+      { filename: '[name].[contenthash].bundle.css', ignoreOrder: true }
+    ),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
+    new ImageminWebpWebpackPlugin(
+      {
+        config: [{
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality:  100
+          }
+        }],
+        overrideExtension: true,
+        detailedLogs: false,
+        silent: false,
+        strict: true
+      }
+    )
   ],
   mode: 'development',
 }
